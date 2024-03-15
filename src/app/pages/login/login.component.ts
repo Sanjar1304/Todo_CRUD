@@ -41,9 +41,9 @@ export class LoginComponent extends UnsubscribeDirective implements OnInit {
 
 	public initLoginForm(): void {
 		this.loginForm = this._fb.group({
-			email: ['nurlan@payme.uz', [Validators.required, Validators.email]], // TODO delete static email before commit
+			email: ['', [Validators.required, Validators.email]],
 			password: [
-				'12345678', // TODO delete static password before commit
+				'',
 				[
 					Validators.required,
 					Validators.minLength(5),
