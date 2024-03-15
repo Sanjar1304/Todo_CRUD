@@ -7,7 +7,6 @@ import {
 	ReactiveFormsModule,
 	Validators,
 	FormsModule,
-	FormControl,
 } from '@angular/forms'
 
 import { MatFormFieldModule } from '@angular/material/form-field'
