@@ -1,0 +1,46 @@
+@import '../../../../visual/visual';
+
+:host {
+	.error {
+		@include flex(column, center, center);
+		width: 100%;
+		padding: 50px 0;
+
+		&_image {
+			margin-bottom: 35px;
+		}
+
+		&_underline {
+			min-height: 2px;
+			max-height: 2px;
+			min-width: 100%;
+			margin-bottom: 50px;
+		}
+
+		&__description {
+			@include flex(row, center, center);
+			min-width: 100%;
+
+			&__text {
+				@include flex(column, flex-start, space-between);
+				min-height: 100%;
+
+				&_title {
+					color: black;
+				}
+
+				&_message {
+					color: black;
+				}
+			}
+		}
+
+		&_navigation {
+			width: 150px;
+			padding: 10px;
+			margin-top: 1.5rem;
+			border-radius: 8px;
+			border: 1px solid red;
+		}
+	}
+}

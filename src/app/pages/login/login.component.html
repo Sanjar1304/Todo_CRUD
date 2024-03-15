@@ -1,0 +1,63 @@
+<div class="main-content-height login">
+	<div class="login__content">
+		<form
+			class="login__content__form"
+			[formGroup]="loginForm"
+			(ngSubmit)="onSubmit()">
+			<mat-form-field class="login__content__form__field">
+				<mat-label class="login__content__form__field_label">Email</mat-label>
+				<input
+					class="login__content__form__field_input"
+					matInput
+					placeholder="Email"
+					formControlName="email" />
+				<mat-error
+					*ngIf="
+						loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+					">
+					<span *ngIf="loginForm.get('email')?.hasError('required')"
+						>Email is required</span
+					>
+					<span *ngIf="loginForm.get('email')?.hasError('email')"
+						>Put here right email</span
+					>
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field class="login__content__form__field">
+				<mat-label class="login__content__form__field_label"
+					>Password</mat-label
+				>
+				<input
+					class="login__content__form__field_input"
+					matInput
+					placeholder="Password"
+					formControlName="password" />
+				<mat-error
+					*ngIf="
+						loginForm.get('password')?.invalid &&
+						loginForm.get('password')?.touched
+					">
+					<span *ngIf="loginForm.get('password')?.hasError('required')"
+						>Password is required</span
+					>
+					<span
+						*ngIf="
+							loginForm.get('password')?.hasError('minlength') ||
+							loginForm.get('password')?.hasError('maxlength')
+						"
+						>Characters should be between 5 and 30</span
+					>
+				</mat-error>
+			</mat-form-field>
+
+			<button
+				type="submit"
+				mat-button
+				color="primary"
+				[disabled]="!loginForm.valid"
+				>Login</button
+			>
+		</form>
+	</div>
+</div>
